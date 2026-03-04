@@ -24,6 +24,10 @@ public class CanardFeu extends CanardDeCombat{
     @Override
     public void attaquer(CanardDeCombat cible) {
         double mult = cible.etreAttaqueePar(this);
-        effectuerAttaque(cible,mult);
+        effectuerAttaque(cible,mult*intensiteFlamme());
+    }
+
+    private double intensiteFlamme(){
+        return Math.random() * (1.5 - 0.8) + 0.8;
     }
 }
